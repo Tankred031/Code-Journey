@@ -3,6 +3,23 @@
 const projectsList = document.querySelector(".projects-list");
 console.log(projectsList);
 
+function izracunajTrajanje(pocetak, kraj, status) {
+    const startDate = new Date(pocetak);
+    let endDate;
+    if (status === "completed" || status === "abandoned") {
+        endDate = new Date(kraj);
+    } else {
+        endDate = new Date();
+    }
+
+    const razlika = endDate - startDate;
+    const dani = Math.floor(razlika / (1000 * 60 * 60 * 24));
+
+    return dani;
+}
+
+console.log(izracunajTrajanje("2026-06-01", null, "active"));
+
 
 function renderProjects() {
     projekti.forEach(function(projekt) {
@@ -27,7 +44,7 @@ function renderProjects() {
             <div class="project-meta">
                 <p><strong>Tehnologije:</strong> ${projekt.tehnologije.join(", ")} </p>                    
                 <p><strong>Početak:</strong> ${projekt.pocetak}</p>
-                <p><strong>Trajanje:</strong> računa se kasnije kroz JavaScript</p>
+                <p><strong>Trajanje:</strong> ${izracunajTrajanje(projekt.pocetak, projekt.kraj, projekt.status)} dana</p>
             </div>
         `;
 
@@ -37,3 +54,4 @@ function renderProjects() {
 }
 
 renderProjects()
+
