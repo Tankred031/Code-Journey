@@ -1,5 +1,9 @@
 const projectsList = document.querySelector(".projects-list");
 const viewButtons = document.querySelectorAll(".view-btn");
+const totalProjects = document.querySelector("#total-projects");
+const completedProjects = document.querySelector("#completed-projects");
+const activeProjects = document.querySelector("#active-projects");
+const testingProjects = document.querySelector("#testing-projects");
 
 
 function izracunajTrajanje(pocetak, kraj, status) {
@@ -20,6 +24,21 @@ function izracunajTrajanje(pocetak, kraj, status) {
 //console.log(izracunajTrajanje("2026-06-01", null, "u izradi"));
 
 
+function renderStats() {
+    totalProjects.textContent = projekti.length;
+
+    completedProjects.textContent = projekti.filter(function(projekt) {
+        return projekt.status === "završen";
+    }).length;
+
+    activeProjects.textContent = projekti.filter(function(projekt) {
+        return projekt.status === "u izradi";
+    }).length;
+
+    testingProjects.textContent = projekti.filter(function(projekt) {
+        return projekt.status === "testiranje";
+    }).length;
+}
 
 
 function renderProjects(nacinPrikaza) {
@@ -106,7 +125,9 @@ viewButtons.forEach(function (button) {
     });
 });
 
-renderProjects("aktualno")
+renderProjects("aktualno");
+renderStats();
+
 
 /*
 <div class="project-image-stack">
