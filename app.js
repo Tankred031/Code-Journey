@@ -6,7 +6,7 @@ console.log(projectsList);
 function izracunajTrajanje(pocetak, kraj, status) {
     const startDate = new Date(pocetak);
     let endDate;
-    if (status === "completed" || status === "abandoned") {
+    if (status === "završen" || status === "napušten") {
         endDate = new Date(kraj);
     } else {
         endDate = new Date();
@@ -42,7 +42,9 @@ function renderProjects() {
             </p>
                 
             <div class="project-meta">
-                <p><strong>Tehnologije:</strong> ${projekt.tehnologije.join(", ")} </p>                    
+                <p><strong>Tehnologije:</strong> ${projekt.tehnologije.join(", ")} </p>                
+                <p><strong>Kategorija:</strong> ${projekt.kategorija}</p>
+                <p><strong>Razina:</strong> ${projekt.razina}</p>
                 <p><strong>Početak:</strong> ${projekt.pocetak}</p>
                 <p><strong>Trajanje:</strong> ${izracunajTrajanje(projekt.pocetak, projekt.kraj, projekt.status)} dana</p>
             </div>
