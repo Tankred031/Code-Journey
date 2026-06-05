@@ -128,3 +128,8 @@ body {
     border-radius: 14px;
     margin: 18px 0;
 }
+
+.projects-list {
+    display: grid;
+    gap: 24px;
+}
