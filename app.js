@@ -1,7 +1,8 @@
 //console.log(projekti);
 
 const projectsList = document.querySelector(".projects-list");
-console.log(projectsList);
+//console.log(projectsList);
+
 
 function izracunajTrajanje(pocetak, kraj, status) {
     const startDate = new Date(pocetak);
@@ -18,11 +19,30 @@ function izracunajTrajanje(pocetak, kraj, status) {
     return dani;
 }
 
-console.log(izracunajTrajanje("2026-06-01", null, "active"));
+//console.log(izracunajTrajanje("2026-06-01", null, "u izradi"));
 
 
-function renderProjects() {
-    projekti.forEach(function(projekt) {
+
+
+function renderProjects(nacinPrikaza) {
+
+    let projektiZaPrikaz = [...projekti];
+
+    if (nacinPrikaza === "aktualno") {
+        projektiZaPrikaz.sort(function (a, b) {
+            return new Date(b.pocetak) - new Date(a.pocetak)
+        });
+    }
+
+    if (nacinPrikaza === "progres") {
+        projektiZaPrikaz.sort(function (a, b) {
+            return new Date(a.pocetak) - new Date(b.pocetak)
+        });
+    }
+
+    projectsList.innerHTML = "";
+
+    projektiZaPrikaz.forEach(function (projekt) {
         const article = document.createElement("article");
         article.classList.add("project-card")
 
@@ -52,8 +72,8 @@ function renderProjects() {
 
         projectsList.appendChild(article);
         console.log(projekt.naziv);
-    });    
+    });
 }
 
-renderProjects()
+renderProjects("aktualno")
 

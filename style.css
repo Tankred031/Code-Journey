@@ -133,3 +133,25 @@ body {
     display: grid;
     gap: 24px;
 }
+
+.view-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.view-btn {
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    color: #cbd5e1;
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.view-btn.active-view {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
+}

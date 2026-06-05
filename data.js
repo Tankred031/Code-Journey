@@ -27,11 +27,11 @@ const projekti = [
         naziv: "Health Companion",
         opis: "Wellness aplikacija s meteo podacima, hidracijom i sezonskim preporukama.",
         tehnologije: ["React", "Bulma", "JavaScript", "API"],
-        kategorija: "Calculator / Work Tool",
+        kategorija: "Health / Wellness App",
         slika: "images/Health-img.png",
         status: "testiranje",
         pocetak: "2026-05-24",
-        kraj: "2026-05-30",
+        kraj: null, 
         razina: "Intermediate",
         deploy: "https://health-companion-mauve.vercel.app/"
     },
@@ -40,11 +40,11 @@ const projekti = [
         opis: "Kalkulator trošarina za kavu, pića, duhan i alkohol.", tehnologije: ["HTML", "CSS", "JavaScript"],
         kategorija: "Calculator / Work Tool",
         slika: "images/Excise-img.png",
-        status: "u izradi",
+        status: "završen",
         pocetak: "2026-06-01",
-        kraj: null,
+        kraj: "2026-06-05",
         razina: "Beginner+ / Practical",
         deploy: "https://excise-duties-calculator.vercel.app/"
     }
     
-]
+];
