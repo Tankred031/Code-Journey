@@ -43,8 +43,8 @@ const projekti = [
         opis: "Kalkulator trošarina za kavu, pića, duhan i alkohol.", tehnologije: ["HTML", "CSS", "JavaScript"],
         kategorija: "Calculator / Work Tool",
         slika: "images/Excise-img.png",
-        status: "završen",
-        statusKlasa: "completed",
+        status: "testiranje",
+        statusKlasa: "testing",
         pocetak: "2026-06-01",
         kraj: "2026-06-05",
         razina: "Beginner+ / Practical",
@@ -52,3 +52,11 @@ const projekti = [
     }
     
 ];
+
+/*
+slike: [
+    "images/Excise-1.png",
+    "images/Excise-2.png",
+    "images/Excise-3.png"
+]
+*/

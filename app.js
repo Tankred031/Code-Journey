@@ -57,17 +57,34 @@ function renderProjects(nacinPrikaza) {
                 alt="Screenshot projekta ${projekt.naziv}"
             >
 
-            <p class="project-description">
-                ${projekt.opis}
-            </p>
-                
-            <div class="project-meta">
-                <p><strong>Tehnologije:</strong> ${projekt.tehnologije.join(", ")} </p>                
-                <p><strong>Kategorija:</strong> ${projekt.kategorija}</p>
-                <p><strong>Razina:</strong> ${projekt.razina}</p>
-                <p><strong>Početak:</strong> ${projekt.pocetak}</p>
-                <p><strong>Trajanje:</strong> ${izracunajTrajanje(projekt.pocetak, projekt.kraj, projekt.status)} dana</p>
+            <div class="project-content">
+
+                <div class="project-main-info">
+                    <p class="project-description">
+                        ${projekt.opis}
+                    </p>
+                        
+                    <div class="project-meta">
+                        <p><strong>Tehnologije:</strong> ${projekt.tehnologije.join(", ")}</p>                
+                        <p><strong>Kategorija:</strong> ${projekt.kategorija}</p>
+                        <p><strong>Početak:</strong> ${projekt.pocetak}</p>
+                        <p><strong>Trajanje:</strong> ${izracunajTrajanje(projekt.pocetak, projekt.kraj, projekt.status)} dana</p>
+                    </div>
+                </div>
+
+                <aside class="project-side-info">
+                    <p class="side-label">Razina</p>
+                    <strong>${projekt.razina}</strong>
+
+                    ${projekt.deploy
+                            ? `<a class="deploy-link" href="${projekt.deploy}" target="_blank">Otvori projekt</a>`
+                            : `<span class="deploy-empty">Nema deploy</span>`
+                        }
+                </aside>
+
             </div>
+
+            
         `;
 
         projectsList.appendChild(article);
@@ -75,11 +92,11 @@ function renderProjects(nacinPrikaza) {
     });
 }
 
-viewButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
+viewButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
         const view = button.dataset.view;
 
-        viewButtons.forEach(function(btn) {
+        viewButtons.forEach(function (btn) {
             btn.classList.remove("active-view");
         });
 
@@ -91,3 +108,15 @@ viewButtons.forEach(function(button) {
 
 renderProjects("aktualno")
 
+/*
+<div class="project-image-stack">
+    ${projekt.slike.map(function(slika) {
+        return `
+            <img 
+                src="${slika}" 
+                alt="Screenshot projekta ${projekt.naziv}"
+            >
+        `;
+    }).join("")}
+</div>
+*/
