@@ -44,10 +44,12 @@ function renderProjects(nacinPrikaza) {
         const article = document.createElement("article");
         article.classList.add("project-card")
 
+        console.log(projekt.naziv, projekt.status, projekt.statusKlasa);
+
         article.innerHTML = `
             <div class="project-header">
                 <h3>${projekt.naziv}</h3>
-                <span class="status ${projekt.statusKlasa}">${projekt.status}</span>
+                <span class="status ${projekt.statusKlasa || "active"}">${projekt.status}</span>
             </div>
 
             <img class="project-image" 
