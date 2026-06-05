@@ -102,11 +102,25 @@ body {
     border-radius: 999px;
     font-size: 13px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
-.status.active {
+.status.completed {
     background-color: #0f766e;
-    color: #ccfbf1;
+    color: #bbf7d0;
+}
+
+.status.testing {
+    background-color: #0369a1;
+    color: #e0f2fe;
+}
+.status.active {
+    background-color: #854d0e;
+    color: #fef3c7;
+}
+.status.abandoned {
+    background-color: #581c87;
+    color: #f3e8ff;
 }
 
 .project-description {
@@ -137,7 +151,8 @@ body {
 .view-controls {
     display: flex;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    margin-top: 20px;
 }
 
 .view-btn {

@@ -1,7 +1,5 @@
-//console.log(projekti);
-
 const projectsList = document.querySelector(".projects-list");
-//console.log(projectsList);
+const viewButtons = document.querySelectorAll(".view-btn");
 
 
 function izracunajTrajanje(pocetak, kraj, status) {
@@ -49,7 +47,7 @@ function renderProjects(nacinPrikaza) {
         article.innerHTML = `
             <div class="project-header">
                 <h3>${projekt.naziv}</h3>
-                <span class="status active">${projekt.status}</span>
+                <span class="status ${projekt.statusKlasa}">${projekt.status}</span>
             </div>
 
             <img class="project-image" 
@@ -74,6 +72,20 @@ function renderProjects(nacinPrikaza) {
         console.log(projekt.naziv);
     });
 }
+
+viewButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const view = button.dataset.view;
+
+        viewButtons.forEach(function(btn) {
+            btn.classList.remove("active-view");
+        });
+
+        button.classList.add("active-view");
+
+        renderProjects(view);
+    });
+});
 
 renderProjects("aktualno")
 
