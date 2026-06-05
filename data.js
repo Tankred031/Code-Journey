@@ -1,5 +1,18 @@
 const projekti = [
     {
+        naziv: "My First Webpage",
+        opis: "Moja prva HTML/CSS stranica: osnovni HTML kostur, heading elementi, link na CSS datoteku i prva promjena boje pozadine.",
+        tehnologije: ["HTML", "CSS"],
+        kategorija: "First Steps / HTML CSS Basics",
+        slika: "images/MyFirst-img.png",
+        status: "završen",
+        statusKlasa: "completed",
+        pocetak: "2025-11-06",
+        kraj: "2025-11-06",
+        razina: "Absolute Beginner / First HTML CSS Contact",
+        deploy: ""
+    },
+    {
         naziv: "Machines of Future",
         opis: "Statički HTML/CSS SF projekt inspiriran filmovima 80-ih, s tematskim stranicama, slikama, videom i retro atmosferom.",
         tehnologije: ["HTML", "CSS"],
@@ -34,7 +47,7 @@ const projekti = [
         status: "testiranje",
         statusKlasa: "testing",
         pocetak: "2026-05-24",
-        kraj: null, 
+        kraj: null,
         razina: "Intermediate",
         deploy: "https://health-companion-mauve.vercel.app/"
     },
@@ -50,7 +63,7 @@ const projekti = [
         razina: "Beginner+ / Practical",
         deploy: "https://excise-duties-calculator.vercel.app/"
     }
-    
+
 ];
 
 /*
