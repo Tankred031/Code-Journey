@@ -53,15 +53,29 @@ const projekti = [
     },
     {
         naziv: "Excise Duties Calculator",
-        opis: "Kalkulator trošarina za kavu, pića, duhan i alkohol.", tehnologije: ["HTML", "CSS", "JavaScript"],
+        opis: "Kalkulator trošarina za kavu, pića, duhan i alkohol.", 
+        tehnologije: ["HTML", "CSS", "JavaScript"],
         kategorija: "Calculator / Work Tool",
         slika: "images/Excise-img.png",
-        status: "testiranje",
-        statusKlasa: "testing",
+        status: "završen",
+        statusKlasa: "completed",
         pocetak: "2026-06-01",
-        kraj: "2026-06-05",
+        kraj: "2026-06-11",
         razina: "Beginner+ / Practical",
         deploy: "https://excise-duties-calculator.vercel.app/"
+    },
+    {
+        naziv: "SF Quiz Progression",
+        opis: "Retro SF kviz aplikacija s razinama, tematskim kategorijama, admin otključavanjem, nagradnim slikama i spremanjem napretka u localStorage.",
+        tehnologije: ["HTML", "CSS", "JavaScript"],
+        kategorija: "Quiz / Progression App",
+        slika: "images/SF-Quiz-img.png",
+        status: "u izradi",
+        statusKlasa: "in-progress",
+        pocetak: "2026-06-04",
+        kraj: null,
+        razina: "Beginner+ / Vanilla JS",
+        deploy: ""
     }
 
 ];
