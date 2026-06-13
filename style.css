@@ -228,38 +228,70 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* =========================================
+   GITHUB LANGUAGE BAR
+========================================= */
 
-
-/*
-.project-image-stack {
-    position: relative;
-    height: 260px;
-    margin: 18px 0;
+.technology-usage {
+    width: 100%;
+    max-width: 520px;
+    margin: 14px 0 18px;
 }
 
-.project-image-stack img {
-    position: absolute;
-    width: 72%;
-    border-radius: 14px;
-    border: 1px solid #374151;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+.technology-bar {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 999px;
+    background-color: #30363d;
 }
 
-.project-image-stack img:nth-child(1) {
-    left: 0;
-    top: 0;
-    z-index: 3;
+.technology-bar-segment {
+    display: block;
+    height: 100%;
 }
 
-.project-image-stack img:nth-child(2) {
-    left: 90px;
-    top: 28px;
-    z-index: 2;
+.technology-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-top: 10px;
 }
 
-.project-image-stack img:nth-child(3) {
-    left: 180px;
-    top: 56px;
-    z-index: 1;
+.technology-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #cbd5e1;
+    font-size: 14px;
 }
-*/
+
+.technology-legend-item strong {
+    color: #f9fafb;
+}
+
+.technology-dot {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+/* GitHub boje jezika */
+
+.tech-js {
+    background-color: #f1e05a;
+}
+
+.tech-vue {
+    background-color: #41b883;
+}
+
+.tech-css {
+    background-color: #563d7c;
+}
+
+.tech-html {
+    background-color: #e34c26;
+}

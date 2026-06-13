@@ -27,15 +27,15 @@ function izracunajTrajanje(pocetak, kraj, status) {
 function renderStats() {
     totalProjects.textContent = projekti.length;
 
-    completedProjects.textContent = projekti.filter(function(projekt) {
+    completedProjects.textContent = projekti.filter(function (projekt) {
         return projekt.status === "završen";
     }).length;
 
-    activeProjects.textContent = projekti.filter(function(projekt) {
+    activeProjects.textContent = projekti.filter(function (projekt) {
         return projekt.status === "u izradi";
     }).length;
 
-    testingProjects.textContent = projekti.filter(function(projekt) {
+    testingProjects.textContent = projekti.filter(function (projekt) {
         return projekt.status === "testiranje";
     }).length;
 }
@@ -63,6 +63,47 @@ function renderProjects(nacinPrikaza) {
         const article = document.createElement("article");
         article.classList.add("project-card")
 
+        let technologyBarHtml = "";
+
+        if (Array.isArray(projekt.udioTehnologija)) {
+            const barSegments = projekt.udioTehnologija
+                .map(function (tehnologija) {
+                    return `
+                <span
+                    class="technology-bar-segment ${tehnologija.klasa}"
+                    style="width: ${tehnologija.postotak}%"
+                    title="${tehnologija.naziv}: ${tehnologija.postotak}%"
+                ></span>
+            `;
+                })
+                .join("");
+
+            const legendItems = projekt.udioTehnologija
+                .map(function (tehnologija) {
+                    return `
+                <span class="technology-legend-item">
+                    <span class="technology-dot ${tehnologija.klasa}"></span>
+
+                    <strong>${tehnologija.naziv}</strong>
+                    ${tehnologija.postotak}%
+                </span>
+            `;
+                })
+                .join("");
+
+            technologyBarHtml = `
+        <div class="technology-usage">
+            <div class="technology-bar">
+                ${barSegments}
+            </div>
+
+            <div class="technology-legend">
+                ${legendItems}
+            </div>
+        </div>
+    `;
+        }
+
         console.log(projekt.naziv, projekt.status, projekt.statusKlasa);
 
         article.innerHTML = `
@@ -84,7 +125,10 @@ function renderProjects(nacinPrikaza) {
                     </p>
                         
                     <div class="project-meta">
-                        <p><strong>Tehnologije:</strong> ${projekt.tehnologije.join(", ")}</p>                
+                        <p><strong>Tehnologije:</strong> ${projekt.tehnologije.join(", ")}</p>  
+                        
+                        ${technologyBarHtml}
+                        
                         <p><strong>Kategorija:</strong> ${projekt.kategorija}</p>
                         <p><strong>Početak:</strong> ${projekt.pocetak}</p>
                         <p><strong>Trajanje:</strong> ${izracunajTrajanje(projekt.pocetak, projekt.kraj, projekt.status)} dana</p>
@@ -96,9 +140,9 @@ function renderProjects(nacinPrikaza) {
                     <strong>${projekt.razina}</strong>
 
                     ${projekt.deploy
-                            ? `<a class="deploy-link" href="${projekt.deploy}" target="_blank">Otvori projekt</a>`
-                            : `<span class="deploy-empty">Nema deploy</span>`
-                        }
+                ? `<a class="deploy-link" href="${projekt.deploy}" target="_blank">Otvori projekt</a>`
+                : `<span class="deploy-empty">Nema deploy</span>`
+            }
                 </aside>
 
             </div>
