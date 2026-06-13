@@ -36,7 +36,7 @@ const projekti = [
         pocetak: "2026-03-12",
         kraj: "2026-05-19",
         razina: "Intermediate / Final Project",
-        deploy: "https://edunova4.origo.hr/"
+        deploy: ""
     },
     {
         naziv: "Health Companion",
@@ -53,7 +53,7 @@ const projekti = [
     },
     {
         naziv: "Excise Duties Calculator",
-        opis: "Kalkulator trošarina za kavu, pića, duhan i alkohol.", 
+        opis: "Kalkulator trošarina za kavu, pića, duhan i alkohol.",
         tehnologije: ["HTML", "CSS", "JavaScript"],
         kategorija: "Calculator / Work Tool",
         slika: "images/Excise-img.png",
@@ -75,6 +75,19 @@ const projekti = [
         pocetak: "2026-06-04",
         kraj: null,
         razina: "Beginner+ / Vanilla JS",
+        deploy: ""
+    },
+    {
+        naziv: "SM Šped Web",
+        opis: "Moderna poslovna web stranica za špeditersku firmu s prikazom usluga, carinskih postupaka, podataka o tvrtki i kontakt obrascem.",
+        tehnologije: ["Vue", "Bulma", "CSS", "JavaScript", "Vite"],
+        kategorija: "Business Website / Logistics",
+        slika: "images/SM-img.png",
+        status: "u izradi",
+        statusKlasa: "in-progress",
+        pocetak: "2026-06-13",
+        kraj: null,
+        razina: "Beginner+ / Vue",
         deploy: ""
     }
 
