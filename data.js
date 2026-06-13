@@ -146,17 +146,17 @@ const projekti = [
         udioTehnologija: [
             {
                 naziv: "JavaScript",
-                postotak: 73.5,
+                postotak: 76.9,
                 klasa: "tech-js"
             },
             {
                 naziv: "CSS",
-                postotak: 18.2,
+                postotak: 19,
                 klasa: "tech-css"
             },
             {
                 naziv: "HTML",
-                postotak: 3.9,
+                postotak: 4.1,
                 klasa: "tech-html"
             }
         ],
@@ -170,7 +170,7 @@ const projekti = [
         deploy: ""
     },
     {
-        naziv: "SM Šped Web",
+        naziv: "SM Šped Website",
         opis: "Moderna poslovna web stranica za špeditersku firmu s prikazom usluga, carinskih postupaka, podataka o tvrtki i kontakt obrascem.",
         tehnologije: ["Vue", "Bulma", "CSS", "JavaScript", "Vite"],
         udioTehnologija: [
@@ -197,10 +197,10 @@ const projekti = [
         ],
         kategorija: "Business Website / Logistics",
         slika: "images/SM2-img.png",
-        status: "u izradi",
-        statusKlasa: "in-progress",
+        status: "završen",
+        statusKlasa: "completed",
         pocetak: "2026-06-13",
-        kraj: null,
+        kraj: "2026-06-14",
         razina: "Beginner+ / Vue",
         deploy: ""
     }

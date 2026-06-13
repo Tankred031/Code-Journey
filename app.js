@@ -9,6 +9,7 @@ const testingProjects = document.querySelector("#testing-projects");
 function izracunajTrajanje(pocetak, kraj, status) {
     const startDate = new Date(pocetak);
     let endDate;
+
     if (status === "završen" || status === "napušten") {
         endDate = new Date(kraj);
     } else {
@@ -18,7 +19,7 @@ function izracunajTrajanje(pocetak, kraj, status) {
     const razlika = endDate - startDate;
     const dani = Math.floor(razlika / (1000 * 60 * 60 * 24));
 
-    return dani;
+    return Math.max(1, dani);
 }
 
 //console.log(izracunajTrajanje("2026-06-01", null, "u izradi"));
@@ -40,6 +41,9 @@ function renderStats() {
     }).length;
 }
 
+function formatirajDane(brojDana) {
+    return brojDana === 1 ? "1 dan" : `${brojDana} dana`;
+}
 
 function renderProjects(nacinPrikaza) {
 
@@ -131,7 +135,13 @@ function renderProjects(nacinPrikaza) {
                         
                         <p><strong>Kategorija:</strong> ${projekt.kategorija}</p>
                         <p><strong>Početak:</strong> ${projekt.pocetak}</p>
-                        <p><strong>Trajanje:</strong> ${izracunajTrajanje(projekt.pocetak, projekt.kraj, projekt.status)} dana</p>
+                        <p><strong>Trajanje:</strong> ${formatirajDane(
+                                        izracunajTrajanje(
+                                            projekt.pocetak,
+                                            projekt.kraj,
+                                            projekt.status
+                                        )
+                                    )}</p>
                     </div>
                 </div>
 
