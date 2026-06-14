@@ -373,7 +373,7 @@ const projekti = [
 
         razina: "2",
 
-        deploy: ""
+        deploy: "https://webpagesm-sped.vercel.app/"
     },
 
     {
