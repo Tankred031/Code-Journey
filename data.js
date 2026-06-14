@@ -163,7 +163,7 @@ const projekti = [
 
         kategorija: "Food Pairing / CRUD App",
 
-        slika: "images/Wine-img.png",
+        slika: ["images/Wine-img.png", "images/Wine2-img.png"],
 
         status: "završen",
         statusKlasa: "completed",
@@ -175,7 +175,6 @@ const projekti = [
 
         deploy: ""
     },
-
     {
         naziv: "Health Companion",
         opis: "Wellness aplikacija s meteo podacima, hidracijom i sezonskim preporukama.",
@@ -224,7 +223,56 @@ const projekti = [
 
         deploy: "https://health-companion-mauve.vercel.app/"
     },
+    {
+        naziv: "DruidSpecs",
 
+        opis: "React vodič kroz Diablo druid i assassin specijalizacije, njihove vještine, potrebne razine, troškove mane, trajanje i tipove napada.",
+
+        tehnologije: [
+            "React",
+            "React Bootstrap",
+            "JavaScript",
+            "CSS",
+            "Vite"
+        ],
+
+        technologyGroups: [
+            {
+                naziv: "",
+                udioTehnologija: [
+                    {
+                        naziv: "JavaScript",
+                        postotak: 98,
+                        klasa: "tech-js"
+                    },
+                    {
+                        naziv: "HTML",
+                        postotak: 1.1,
+                        klasa: "tech-html"
+                    },
+                    {
+                        naziv: "CSS",
+                        postotak: 0.9,
+                        klasa: "tech-css"
+                    }                    
+                ]
+            }
+        ],
+
+        kategorija: "Game Guide / Reference App",
+
+        slika: ["images/druids1-img.png", "images/druids2-img.png"],
+
+        status: "završen",
+        statusKlasa: "completed",
+
+        pocetak: "2026-05-22",
+        kraj: "2026-06-02",
+
+        razina: "2",
+
+        deploy: ""
+    },
     {
         naziv: "Excise Duties Calculator",
         opis: "Kalkulator trošarina za kavu, pića, duhan i alkohol.",
@@ -272,7 +320,6 @@ const projekti = [
 
         deploy: "https://excise-duties-calculator.vercel.app/"
     },
-
     {
         naziv: "SF Quiz",
         opis: "Retro SF kviz aplikacija s razinama, tematskim kategorijama, admin otključavanjem, nagradnim slikama i spremanjem napretka u localStorage.",
@@ -328,7 +375,7 @@ const projekti = [
         technologyGroups: [
             {
                 naziv: "",
-                udioTehnologija: [                    
+                udioTehnologija: [
                     {
                         naziv: "JavaScript",
                         postotak: 54.9,
