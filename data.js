@@ -424,7 +424,7 @@ const projekti = [
     },
 
     {
-        naziv: "Python Page",
+        naziv: "Python Page & Python Streamlit",
         opis: "Dvije jednostavne Python web aplikacije: Flask stranica s HTML/CSS frontendom i Streamlit aplikacija izrađena potpuno u Pythonu.",
 
         tehnologije: [
