@@ -274,7 +274,7 @@ const projekti = [
     },
 
     {
-        naziv: "SF Quiz Progression",
+        naziv: "SF Quiz",
         opis: "Retro SF kviz aplikacija s razinama, tematskim kategorijama, admin otključavanjem, nagradnim slikama i spremanjem napretka u localStorage.",
 
         tehnologije: [
