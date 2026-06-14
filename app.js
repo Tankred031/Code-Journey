@@ -221,6 +221,24 @@ function napraviTechnologyBars(projekt) {
     `;
 }
 
+/* =========================================
+   DOHVAT RAZINE PROJEKATA
+========================================= */
+
+
+function dohvatiRazinu(sifraRazina) {
+    const razina = razineProjekata[String(sifraRazina)];
+
+    if (!razina) {
+        return {
+            broj: "?",
+            naziv: "Nepoznata razina",
+            opis: "Za ovu šifru nije pronađena razina."
+        };
+    }
+
+    return razina;
+}
 
 /* =========================================
    RENDER PROJEKATA
@@ -247,6 +265,8 @@ function renderProjects(nacinPrikaza) {
         const article = document.createElement("article");
 
         article.classList.add("project-card");
+
+        const podatciRazina = dohvatiRazinu(projekt.razina);
 
         const projectImagesHtml = napraviSlikeHtml(projekt);
 
@@ -335,9 +355,9 @@ function renderProjects(nacinPrikaza) {
                         Razina
                     </p>
 
-                    <strong>
-                        ${projekt.razina}
-                    </strong>
+                    
+                    ${napraviRazinuHtml(projekt)}
+                    
 
                     ${deployHtml}
 

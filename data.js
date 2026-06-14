@@ -1,3 +1,53 @@
+const razineProjekata = {
+    "0": {
+        broj: 0,
+        naziv: "Hello World faza",
+        opis: "Prvi mali projekti, osnovne naredbe i upoznavanje s tehnologijom."
+    },
+
+    "1": {
+        broj: 1,
+        naziv: "Static Frontend Beginner",
+        opis: "Statične web stranice izrađene pomoću HTML-a i CSS-a."
+    },
+
+    "2": {
+        broj: 2,
+        naziv: "Interactive Frontend Beginner",
+        opis: "Interaktivne frontend aplikacije s korisničkim unosima, stanjem i API pozivima."
+    },
+
+    "3": {
+        broj: 3,
+        naziv: "Structured Frontend Developer",
+        opis: "Strukturirane aplikacije s komponentama, CRUD funkcijama i organiziranim podacima."
+    },
+
+    "4": {
+        broj: 4,
+        naziv: "Real World Application Developer",
+        opis: "Aplikacije povezane sa stvarnim podacima, lokacijom, API servisima i kontekstualnom logikom."
+    },
+
+    "5": {
+        broj: 5,
+        naziv: "System Architecture Mindset",
+        opis: "Sustavi s progresijom, grananjem, pravilima, dinamičkim renderiranjem i složenijim tokom podataka."
+    },
+
+    "6": {
+        broj: 6,
+        naziv: "Full Stack Systems",
+        opis: "Frontend i backend komunikacija, baze podataka, autentifikacija i API arhitektura."
+    },
+
+    "7": {
+        broj: 7,
+        naziv: "Advanced Engineering / Product Systems",
+        opis: "Napredni, skalabilni sustavi poput SaaS platformi, multiplayer i AI aplikacija."
+    }
+};
+
 const projekti = [
     {
         naziv: "My First Webpage",
@@ -33,7 +83,7 @@ const projekti = [
         pocetak: "2025-11-06",
         kraj: "2025-11-06",
 
-        razina: "Absolute Beginner / First HTML CSS Contact",
+        razina: "0",
 
         deploy: ""
     },
@@ -72,7 +122,7 @@ const projekti = [
         pocetak: "2025-12-20",
         kraj: "2026-01-12",
 
-        razina: "Beginner / HTML CSS Practice",
+        razina: "1",
 
         deploy: ""
     },
@@ -121,7 +171,7 @@ const projekti = [
         pocetak: "2026-03-12",
         kraj: "2026-05-19",
 
-        razina: "Intermediate / Final Project",
+        razina: "3",
 
         deploy: ""
     },
@@ -170,7 +220,7 @@ const projekti = [
         pocetak: "2026-05-24",
         kraj: null,
 
-        razina: "Intermediate",
+        razina: "4",
 
         deploy: "https://health-companion-mauve.vercel.app/"
     },
@@ -218,7 +268,7 @@ const projekti = [
         pocetak: "2026-06-01",
         kraj: "2026-06-11",
 
-        razina: "Beginner+ / Practical",
+        razina: "3",
 
         deploy: "https://excise-duties-calculator.vercel.app/"
     },
@@ -266,7 +316,7 @@ const projekti = [
         pocetak: "2026-06-04",
         kraj: null,
 
-        razina: "Beginner+ / Vanilla JS",
+        razina: "5",
 
         deploy: ""
     },
@@ -321,7 +371,7 @@ const projekti = [
         pocetak: "2026-06-13",
         kraj: "2026-06-14",
 
-        razina: "Beginner+ / Vue",
+        razina: "2",
 
         deploy: ""
     },
@@ -385,7 +435,7 @@ const projekti = [
         pocetak: "2026-06-14",
         kraj: "2026-06-14",
 
-        razina: "Beginner / Python",
+        razina: "0",
 
         deploy: ""
     }

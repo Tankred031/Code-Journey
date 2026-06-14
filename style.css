@@ -96,6 +96,7 @@ body {
 }
 
 
+
 /* =========================================
    PROJECTS SECTION
 ========================================= */
@@ -117,6 +118,27 @@ body {
 
     border: 1px solid #374151;
     border-radius: 20px;
+}
+
+.backend-level-type {
+    color: #a855f7;
+}
+
+.project-level-type {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #38bdf8;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.project-level-row strong {
+    display: block;
+    margin-bottom: 16px;
 }
 
 
