@@ -522,6 +522,41 @@ body {
     background-color: #3572a5;
 }
 
+/* =========================================
+   PAGINACIJA
+========================================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.pagination button.active {
+    background: #212529;
+    color: white;
+    border-color: #212529;
+}
+
+.pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
 
 /* =========================================
    RESPONSIVE

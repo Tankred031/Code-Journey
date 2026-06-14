@@ -6,6 +6,11 @@ const completedProjects = document.querySelector("#completed-projects");
 const activeProjects = document.querySelector("#active-projects");
 const testingProjects = document.querySelector("#testing-projects");
 
+const projekataPoStranici = 4;
+
+let trenutnaStranica = 1;
+let trenutnoFiltriraniProjekti = projekti;
+let trenutniPrikaz = "aktualno";
 
 /* =========================================
    TRAJANJE PROJEKTA
@@ -34,13 +39,11 @@ function izracunajTrajanje(pocetak, kraj, status) {
     return Math.max(1, dani);
 }
 
-
 function formatirajDane(brojDana) {
     return brojDana === 1
         ? "1 dan"
         : `${brojDana} dana`;
 }
-
 
 /* =========================================
    STATISTIKA
@@ -68,7 +71,6 @@ function renderStats() {
     ).length;
 }
 
-
 /* =========================================
    SLIKE
 ========================================= */
@@ -92,7 +94,6 @@ function dohvatiSlikeProjekta(projekt) {
     return [];
 }
 
-
 function napraviSlikeHtml(projekt) {
     const slikeProjekta = dohvatiSlikeProjekta(projekt);
 
@@ -105,21 +106,21 @@ function napraviSlikeHtml(projekt) {
         : "single-image";
 
     const slikeHtml = slikeProjekta
-    .map(function (slika, index) {
-        const frontClass = index === 0
-            ? "is-front"
-            : "";
+        .map(function (slika, index) {
+            const frontClass = index === 0
+                ? "is-front"
+                : "";
 
-        return `
-            <img
-                src="${slika}"
-                alt="Screenshot projekta ${projekt.naziv}"
-                class="project-image project-image-${index + 1} ${frontClass}"
-                loading="lazy"
-            >
-        `;
-    })
-    .join("");
+            return `
+                <img
+                    src="${slika}"
+                    alt="Screenshot projekta ${projekt.naziv}"
+                    class="project-image project-image-${index + 1} ${frontClass}"
+                    loading="lazy"
+                >
+            `;
+        })
+        .join("");
 
     return `
         <div class="project-images ${imageClass}">
@@ -127,7 +128,6 @@ function napraviSlikeHtml(projekt) {
         </div>
     `;
 }
-
 
 /* =========================================
    JEDAN TECHNOLOGY BAR
@@ -198,7 +198,6 @@ function napraviJedanTechnologyBar(grupa) {
     `;
 }
 
-
 /* =========================================
    SVI TECHNOLOGY BAROVI
 ========================================= */
@@ -225,7 +224,6 @@ function napraviTechnologyBars(projekt) {
    DOHVAT RAZINE PROJEKATA
 ========================================= */
 
-
 function dohvatiRazinu(sifraRazina) {
     const razina = razineProjekata[String(sifraRazina)];
 
@@ -244,7 +242,9 @@ function dohvatiRazinu(sifraRazina) {
    RENDER PROJEKATA
 ========================================= */
 
-function renderProjects(nacinPrikaza) {
+function renderProjects(nacinPrikaza = trenutniPrikaz) {
+    trenutniPrikaz = nacinPrikaza;
+
     let projektiZaPrikaz = [...projekti];
 
     if (nacinPrikaza === "aktualno") {
@@ -259,16 +259,34 @@ function renderProjects(nacinPrikaza) {
         });
     }
 
+    trenutnoFiltriraniProjekti = projektiZaPrikaz;
+
+    const brojStranica = Math.ceil(
+        trenutnoFiltriraniProjekti.length / projekataPoStranici
+    );
+
+    if (trenutnaStranica > brojStranica) {
+        trenutnaStranica = 1;
+    }
+
+    const pocetak =
+        (trenutnaStranica - 1) * projekataPoStranici;
+
+    const kraj =
+        pocetak + projekataPoStranici;
+
+    const projektiNaStranici =
+        trenutnoFiltriraniProjekti.slice(pocetak, kraj);
+
     projectsList.innerHTML = "";
 
-    projektiZaPrikaz.forEach(function (projekt) {
+    projektiNaStranici.forEach(function (projekt) {
         const article = document.createElement("article");
 
         article.classList.add("project-card");
 
-        const podatciRazina = dohvatiRazinu(projekt.razina);
-
-        const projectImagesHtml = napraviSlikeHtml(projekt);
+        const projectImagesHtml =
+            napraviSlikeHtml(projekt);
 
         const technologyBarsHtml =
             napraviTechnologyBars(projekt);
@@ -355,9 +373,7 @@ function renderProjects(nacinPrikaza) {
                         Razina
                     </p>
 
-                    
                     ${napraviRazinuHtml(projekt)}
-                    
 
                     ${deployHtml}
 
@@ -368,8 +384,91 @@ function renderProjects(nacinPrikaza) {
 
         projectsList.appendChild(article);
     });
+
+    renderPagination();
 }
 
+/* =========================================
+   PAGINACIJA
+========================================= */
+
+function renderPagination() {
+    const pagination = document.querySelector("#pagination");
+
+    if (!pagination) {
+        return;
+    }
+
+    const brojStranica = Math.ceil(
+        trenutnoFiltriraniProjekti.length / projekataPoStranici
+    );
+
+    pagination.innerHTML = "";
+
+    if (brojStranica <= 1) {
+        return;
+    }
+
+    const prethodna = document.createElement("button");
+
+    prethodna.textContent = "Prethodna";
+    prethodna.disabled = trenutnaStranica === 1;
+
+    prethodna.addEventListener("click", function () {
+        trenutnaStranica--;
+
+        renderProjects(trenutniPrikaz);
+
+        projectsList.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+
+    pagination.appendChild(prethodna);
+
+    for (let i = 1; i <= brojStranica; i++) {
+        const gumb = document.createElement("button");
+
+        gumb.textContent = i;
+
+        if (i === trenutnaStranica) {
+            gumb.classList.add("active");
+        }
+
+        gumb.addEventListener("click", function () {
+            trenutnaStranica = i;
+
+            renderProjects(trenutniPrikaz);
+
+            projectsList.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+
+        pagination.appendChild(gumb);
+    }
+
+    const sljedeca = document.createElement("button");
+
+    sljedeca.textContent = "Sljedeća";
+    sljedeca.disabled =
+        trenutnaStranica === brojStranica;
+
+    sljedeca.addEventListener("click", function () {
+        trenutnaStranica++;
+
+        renderProjects(trenutniPrikaz);
+
+        projectsList.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+
+    pagination.appendChild(sljedeca);
+}
 
 /* =========================================
    GUMBI ZA PRIKAZ
@@ -385,10 +484,11 @@ viewButtons.forEach(function (button) {
 
         button.classList.add("active-view");
 
+        trenutnaStranica = 1;
+
         renderProjects(view);
     });
 });
-
 
 /* =========================================
    POKRETANJE
