@@ -320,7 +320,54 @@ const projekti = [
 
         deploy: ""
     },
+    {
+        naziv: "Obvious Solution",
+        opis: "Interaktivna SF priča u kojoj korisnik izborima određuje smjer radnje, lokacije i daljnji tijek priče.",
+        tehnologije: ["Vue", "JavaScript", "CSS", "Vue Router", "Vite"],
 
+        technologyGroups: [
+            {
+                naziv: "",
+                udioTehnologija: [                    
+                    {
+                        naziv: "JavaScript",
+                        postotak: 54.9,
+                        klasa: "tech-js"
+                    },
+                    {
+                        naziv: "CSS",
+                        postotak: 26.8,
+                        klasa: "tech-css"
+                    },
+                    {
+                        naziv: "Vue",
+                        postotak: 18.5,
+                        klasa: "tech-vue"
+                    },
+                    {
+                        naziv: "HTML",
+                        postotak: 1.8,
+                        klasa: "tech-html"
+                    }
+                ]
+            }
+        ],
+
+        kategorija: "Interactive Story / Branching System",
+
+        slika: "images/ObviousSolution-img.png",
+
+        status: "napušten",
+        statusKlasa: "abandoned",
+
+        pocetak: "2026-05-30",
+        kraj: null,
+
+        frontendRazina: 5,
+        backendRazina: null,
+
+        deploy: ""
+    },
     {
         naziv: "SM Šped Website",
         opis: "Moderna poslovna web stranica za špeditersku firmu s prikazom usluga, carinskih postupaka, podataka o tvrtki i kontakt obrascem.",
