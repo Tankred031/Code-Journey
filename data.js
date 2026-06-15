@@ -336,17 +336,17 @@ const projekti = [
                 udioTehnologija: [
                     {
                         naziv: "JavaScript",
-                        postotak: 76.9,
+                        postotak: 85.3,
                         klasa: "tech-js"
                     },
                     {
                         naziv: "CSS",
-                        postotak: 19,
+                        postotak: 12.7,
                         klasa: "tech-css"
                     },
                     {
                         naziv: "HTML",
-                        postotak: 4.1,
+                        postotak: 2.0,
                         klasa: "tech-html"
                     }
                 ]
@@ -357,8 +357,8 @@ const projekti = [
 
         slika: "images/SF-Quiz-img.png",
 
-        status: "u izradi",
-        statusKlasa: "in-progress",
+        status: "testiranje",
+        statusKlasa: "testing",
 
         pocetak: "2026-06-04",
         kraj: null,
@@ -534,3 +534,10 @@ const projekti = [
         deploy: ""
     }
 ];
+
+
+/*
+status: završen, napušten, testiranje, u izradi
+statusKlasa: completed, abandoned, testing, progress
+
+*/
