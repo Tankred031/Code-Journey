@@ -579,7 +579,7 @@ const projekti = [
 
         slika: "images/SF-Q2-img.png",
 
-        status: "aktivan",
+        status: "u izradi",
         statusKlasa: "active",
 
         pocetak: "2026-06-17",
@@ -596,6 +596,6 @@ const projekti = [
 
 /*
 status: završen, napušten, testiranje, u izradi
-statusKlasa: completed, abandoned, testing, progress
+statusKlasa: completed, abandoned, testing, active
 
 */
