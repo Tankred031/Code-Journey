@@ -285,6 +285,20 @@ function renderProjects(nacinPrikaza = trenutniPrikaz) {
 
         article.classList.add("project-card");
 
+
+        article.id = projekt.naziv
+            .toLowerCase()
+            .trim()
+            .replace(/[čć]/g, "c")
+            .replace(/š/g, "s")
+            .replace(/ž/g, "z")
+            .replace(/đ/g, "d")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
+
+
+
+
         const projectImagesHtml =
             napraviSlikeHtml(projekt);
 
@@ -489,6 +503,7 @@ viewButtons.forEach(function (button) {
         renderProjects(view);
     });
 });
+
 
 /* =========================================
    POKRETANJE

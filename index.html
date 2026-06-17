@@ -4,66 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Portfolio Tracker</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./images/portfolio.png" type="image/png">
 </head>
 
 <body>
     <main class="app">
-        <header class="hero">
-            <p class="hero-kicker">MY DEVELOPER JOURNEY</p>
 
-            <h1>Portfolio tracker</h1>
+    <header class="hero">
+        <p class="hero-kicker">MY DEVELOPER JOURNEY</p>
 
-            <p class="hero-text">Moj osobni pregled projekata, tehnologija, statusa i vremena rada.</p>
-        </header>
+        <h1>Portfolio tracker</h1>
+
+        <p class="hero-text">
+            Moj osobni pregled projekata, tehnologija, statusa i vremena rada.
+        </p>
+    </header>
+
+    <nav class="main-menu">
+        <button
+            type="button"
+            class="menu-btn active-menu"
+            data-page="project-table-page"
+        >
+            Popis projekata
+        </button>
+
+        <button
+            type="button"
+            class="menu-btn"
+            data-page="project-cards-page"
+        >
+            Detaljni prikaz
+        </button>
+    </nav>
+
+    <!-- =====================================
+         STRANICA 1: SAMO TABLICA
+    ====================================== -->
+
+    <section
+        id="project-table-page"
+        class="page-view active-page"
+    >
+        <div class="table-header">
+            <div>
+                <p class="section-kicker">
+                    PROJECT OVERVIEW
+                </p>
+
+                <h2>Popis projekata</h2>
+            </div>
+
+            <span id="table-project-count"></span>
+        </div>
+
+        <div class="projects-table-wrapper">
+            <table class="projects-table">
+                <thead>
+                    <tr>
+                        <th>Projekt</th>
+                        <th>Status</th>
+                        <th>Kategorija</th>
+                        <th>Tehnologije</th>
+                        <th>Početak</th>
+                        <th>Razina</th>
+                    </tr>
+                </thead>
+
+                <tbody id="projects-table-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- =====================================
+         STRANICA 2: DETALJNI PRIKAZ
+    ====================================== -->
+
+    <section
+        id="project-cards-page"
+        class="page-view"
+    >
         <section class="stats-section">
+
             <div class="stat-card">
                 <span>Ukupno</span>
                 <strong id="total-projects">0</strong>
             </div>
+
             <div class="stat-card">
                 <span>Završeno</span>
                 <strong id="completed-projects">0</strong>
             </div>
+
             <div class="stat-card">
                 <span>U izradi</span>
                 <strong id="active-projects">0</strong>
             </div>
+
             <div class="stat-card">
-                <span>Miruje</span>
+                <span>Testiranje</span>
                 <strong id="testing-projects">0</strong>
             </div>
 
         </section>
-        <section class="projects-section">
 
+        <section class="projects-section">
             <h2>Moji projekti</h2>
 
             <div class="view-controls">
-                <button class="view-btn active-view" data-view="aktualno">
+                <button
+                    type="button"
+                    class="view-btn active-view"
+                    data-view="aktualno"
+                >
                     Aktualno
                 </button>
 
-                <button class="view-btn" data-view="progres">
+                <button
+                    type="button"
+                    class="view-btn"
+                    data-view="progres"
+                >
                     Progres
                 </button>
             </div>
 
             <div class="projects-list"></div>
 
-            <div id="pagination" class="pagination"></div>
-
+            <div
+                id="pagination"
+                class="pagination"
+            ></div>
         </section>
+    </section>
 
-    </main>
-
+</main>
 
     <script src="data.js"></script>
     <script src="levels.js"></script>
     <script src="app.js"></script>
+    <script src="project-table.js"></script>
     <script src="image-toggle.js"></script>
+    <script src="menu.js"></script>
 </body>
 
-</html>
+

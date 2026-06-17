@@ -609,3 +609,237 @@ body {
     }
 }
 }
+
+/* =========================================
+   TABLICA PROJEKATA
+========================================= */
+
+#project-table-page {
+    width: 100%;
+}
+
+.projects-table-wrapper {
+    width: 100%;
+    margin-top: 1.5rem;
+
+    overflow-x: auto;
+
+    border: 1px solid #364154;
+    border-radius: 16px;
+
+    background: #1c2635;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.projects-table {
+    width: 100%;
+    min-width: 1100px;
+
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.projects-table th,
+.projects-table td {
+    padding: 1rem;
+
+    text-align: left;
+    vertical-align: middle;
+
+    border-bottom: 1px solid #344054;
+}
+
+.projects-table th {
+    color: #b8c4d6;
+    background: #252f3e;
+
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.projects-table td {
+    color: #d5dbe5;
+    background: #1c2635;
+
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.projects-table tbody tr:hover td {
+    background: #273244;
+}
+
+.projects-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ŠIRINE STUPACA */
+
+.projects-table th:nth-child(1),
+.projects-table td:nth-child(1) {
+    width: 18%;
+}
+
+.projects-table th:nth-child(2),
+.projects-table td:nth-child(2) {
+    width: 11%;
+}
+
+.projects-table th:nth-child(3),
+.projects-table td:nth-child(3) {
+    width: 20%;
+}
+
+.projects-table th:nth-child(4),
+.projects-table td:nth-child(4) {
+    width: 32%;
+}
+
+.projects-table th:nth-child(5),
+.projects-table td:nth-child(5) {
+    width: 12%;
+}
+
+.projects-table th:nth-child(6),
+.projects-table td:nth-child(6) {
+    width: 7%;
+}
+
+/* =========================================
+   KLIKABILNI NAZIV PROJEKTA
+========================================= */
+
+.table-project-link {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+    color: #f1f5f9;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.table-project-link:hover {
+    color: #38bdf8;
+    transform: translateX(3px);
+}
+
+.table-project-link:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+.table-technologies {
+    color: #aeb9c9;
+}
+
+/* =========================================
+   OZNAČAVANJE OTVORENE KARTICE
+========================================= */
+
+.project-card {
+    scroll-margin-top: 2rem;
+}
+
+.project-card-highlight {
+    animation: projectHighlight 1.6s ease;
+}
+
+@keyframes projectHighlight {
+    0% {
+        box-shadow:
+            0 0 0 2px #38bdf8,
+            0 0 35px rgba(56, 189, 248, 0.55);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 transparent,
+            0 0 0 rgba(56, 189, 248, 0);
+    }
+}
+
+/* =========================================
+   ODVOJENE STRANICE
+========================================= */
+
+.page-view {
+    display: none;
+}
+
+.page-view.active-page {
+    display: block;
+}
+
+/* =========================================
+   GLAVNI MENU
+========================================= */
+
+.main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    width: 100%;
+    margin: 2rem 0 2.5rem;
+}
+
+.menu-btn {
+    min-width: 170px;
+    padding: 0.85rem 1.4rem;
+
+    border: 1px solid #3b4a60;
+    border-radius: 10px;
+
+    background: #1f2937;
+    color: #cbd5e1;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.menu-btn:hover {
+    color: #ffffff;
+    background: #2b374a;
+    border-color: #4c607c;
+
+    transform: translateY(-1px);
+}
+
+.menu-btn:active {
+    transform: scale(0.97);
+}
+
+.menu-btn.active-menu {
+    color: #07111d;
+    background: #38bdf8;
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 18px rgba(56, 189, 248, 0.3);
+}
