@@ -21,9 +21,8 @@ menuButtons.forEach(function (button) {
             pageToShow.classList.add("active-page");
         }
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+        window.scrollTo(0, 0);
+            
         });
     });
-});
+

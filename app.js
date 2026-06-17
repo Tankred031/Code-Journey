@@ -335,11 +335,22 @@ function renderProjects(nacinPrikaza = trenutniPrikaz) {
                     ${projekt.naziv}
                 </h3>
 
-                <span
-                    class="status ${projekt.statusKlasa || "active"}"
-                >
-                    ${projekt.status}
-                </span>
+                <div class="project-header-actions">
+
+                    <button
+                        type="button"
+                        class="project-menu-btn"
+                    >
+                        menu
+                    </button>
+
+                    <span
+                        class="status ${projekt.statusKlasa || "active"}"
+                    >
+                        ${projekt.status}
+                    </span>
+
+                </div>
 
             </div>
 
@@ -504,6 +515,31 @@ viewButtons.forEach(function (button) {
     });
 });
 
+/* =========================================
+   POVRATAK NA TABLICU IZ KARTICE
+========================================= */
+
+if (projectsList) {
+    projectsList.addEventListener("click", function (event) {
+        const menuButton = event.target.closest(
+            ".project-menu-btn"
+        );
+
+        if (!menuButton) {
+            return;
+        }
+
+        const tableButton = document.querySelector(
+            '[data-page="project-table-page"]'
+        );
+
+        if (tableButton) {
+            tableButton.click();
+        }
+
+        window.scrollTo(0, 0);
+    });
+}
 
 /* =========================================
    POKRETANJE

@@ -582,14 +582,66 @@ const projekti = [
         status: "u izradi",
         statusKlasa: "active",
 
-        pocetak: "2026-06-17",
+        pocetak: "2026-06-16",
         kraj: null,
 
         frontendRazina: 6,
         backendRazina: null,
 
         deploy: ""
-    }
+    },
+    {
+    naziv: "Što kuhamo?",
+
+    opis:
+        "Vue aplikacija za planiranje tjednog jelovnika i vođenje kućnih zaliha hrane u hladnjaku i špajzi. Omogućit će odabir obroka po danima, unos kupljenih namirnica i povezivanje potrošnje sastojaka sa zalihama.",
+
+    tehnologije: [
+        "Vue",
+        "JavaScript",
+        "UIkit",
+        "CSS",
+        "Vite"
+    ],
+
+    technologyGroups: [
+            {
+                naziv: "",
+                udioTehnologija: [                    
+                    {
+                        naziv: "JavaScript",
+                        postotak: 64.3,
+                        klasa: "tech-js"
+                    },
+                    {
+                        naziv: "HTML",
+                        postotak: 22.7,
+                        klasa: "tech-html"
+                    },
+                    {
+                        naziv: "Vue",
+                        postotak: 13.0,
+                        klasa: "tech-vue"
+                    }                   
+                ]
+            }
+        ],
+
+    kategorija: "Meal Planner / Pantry Management",
+
+    slika: "images/CookingMenu-img.png",
+
+    status: "u izradi",
+    statusKlasa: "active",
+
+    pocetak: "2026-06-17",
+    kraj: null,
+
+    frontendRazina: 3,
+    backendRazina: null,
+
+    deploy: ""
+}
 
 ];
 

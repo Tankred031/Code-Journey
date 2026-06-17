@@ -104,6 +104,7 @@ function renderProjectTable() {
     }
 }
 
+
 /* =========================================
    KLIK NA PROJEKT U TABLICI
 ========================================= */
@@ -120,6 +121,39 @@ if (projectsTableBody) {
 
         const projectId = projectLink.dataset.projectId;
 
+        /*
+            Kartice u prikazu "aktualno" sortirane su
+            od najnovijeg prema najstarijem.
+        */
+
+        const sortiraniProjekti = [...projekti].sort(
+            function (a, b) {
+                return new Date(b.pocetak) - new Date(a.pocetak);
+            }
+        );
+
+        const indeksProjekta = sortiraniProjekti.findIndex(
+            function (projekt) {
+                return napraviProjectId(projekt.naziv) === projectId;
+            }
+        );
+
+        if (indeksProjekta === -1) {
+            return;
+        }
+
+        /*
+            Izračun stranice:
+            projekti 0–3  → stranica 1
+            projekti 4–7  → stranica 2
+            projekti 8–11 → stranica 3
+        */
+
+        trenutnaStranica =
+            Math.floor(indeksProjekta / projekataPoStranici) + 1;
+
+        trenutniPrikaz = "aktualno";
+
         const detailButton = document.querySelector(
             '[data-page="project-cards-page"]'
         );
@@ -128,25 +162,33 @@ if (projectsTableBody) {
             detailButton.click();
         }
 
+        /*
+            Ponovno renderiramo odgovarajuću stranicu.
+        */
+
+        renderProjects("aktualno");
+
         setTimeout(function () {
             const projectCard = document.getElementById(projectId);
 
-            if (projectCard) {
-                projectCard.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+            if (!projectCard) {
+                return;
+            }
 
-                projectCard.classList.add(
+            projectCard.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            projectCard.classList.add(
+                "project-card-highlight"
+            );
+
+            setTimeout(function () {
+                projectCard.classList.remove(
                     "project-card-highlight"
                 );
-
-                setTimeout(function () {
-                    projectCard.classList.remove(
-                        "project-card-highlight"
-                    );
-                }, 1600);
-            }
+            }, 1600);
         }, 100);
     });
 }
