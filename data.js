@@ -254,7 +254,7 @@ const projekti = [
                         naziv: "CSS",
                         postotak: 0.9,
                         klasa: "tech-css"
-                    }                    
+                    }
                 ]
             }
         ],
@@ -532,7 +532,65 @@ const projekti = [
         razina: "0",
 
         deploy: ""
+    },
+    {
+        naziv: "SF Quiz 2.0",
+
+        opis:
+            "Nova Vue verzija interaktivnog SF filmskog kviza s različitim razdobljima, tematskim cjelinama, sustavom napredovanja, nagradama i zasebnim vizualnim identitetom za svaku granu kviza.",
+
+        tehnologije: [
+            "Vue",
+            "JavaScript",
+            "CSS",
+            "Bulma",
+            "Vite"
+        ],
+
+        technologyGroups: [
+            {
+                naziv: "",
+                udioTehnologija: [                    
+                    {
+                        naziv: "CSS",
+                        postotak: 51.1,
+                        klasa: "tech-css"
+                    },
+                    {
+                        naziv: "Vue",
+                        postotak: 38,
+                        klasa: "tech-vue"
+                    },
+                    {
+                        naziv: "JavaScript",
+                        postotak: 9.2,
+                        klasa: "tech-js"
+                    },
+                    {
+                        naziv: "HTML",
+                        postotak: 1.7,
+                        klasa: "tech-html"
+                    }
+                ]
+            }
+        ],
+
+        kategorija: "Quiz / Progression System",
+
+        slika: "images/SF-Q2-img.png",
+
+        status: "aktivan",
+        statusKlasa: "active",
+
+        pocetak: "2026-06-17",
+        kraj: null,
+
+        frontendRazina: 6,
+        backendRazina: null,
+
+        deploy: ""
     }
+
 ];
 
 
