@@ -321,7 +321,7 @@ const projekti = [
         deploy: "https://excise-duties-calculator.vercel.app/"
     },
     {
-        naziv: "SF Quiz",
+        naziv: "SF Quiz Progression",
         opis: "Retro SF kviz aplikacija s razinama, tematskim kategorijama, admin otključavanjem, nagradnim slikama i spremanjem napretka u localStorage.",
 
         tehnologije: [
@@ -641,8 +641,59 @@ const projekti = [
     backendRazina: null,
 
     deploy: ""
-}
+},
+{
+    naziv: "Water Tracker",
 
+    opis:
+        "Jednostavna React mini aplikacija za praćenje unosa vode, izrađena prvenstveno za upoznavanje s Tailwind CSS-om i utility-first načinom stiliziranja.",
+
+    tehnologije: [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "Vite"
+    ],
+
+    technologyGroups: [
+        {
+            naziv: "",
+            udioTehnologija: [
+                {
+                    naziv: "JavaScript",
+                    postotak: 50.3,
+                    klasa: "tech-js"
+                },
+                {
+                    naziv: "CSS",
+                    postotak: 44.1,
+                    klasa: "tech-css"
+                },
+                {
+                    naziv: "HTML",
+                    postotak: 5.6,
+                    klasa: "tech-html"
+                },
+                
+            ]
+        }
+    ],
+
+    kategorija: "Hydration / State Tracker",
+
+    slika: "images/Water-tracker-img.png",
+
+    status: "završen",
+    statusKlasa: "completed",
+
+    pocetak: "2026-06-18",
+    kraj: "2026-06-18",
+
+    frontendRazina: 2,
+    backendRazina: null,
+
+    deploy: "https://water-tracker-eosin.vercel.app/"
+}
 ];
 
 
