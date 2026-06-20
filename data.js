@@ -552,23 +552,23 @@ const projekti = [
                 naziv: "",
                 udioTehnologija: [                    
                     {
-                        naziv: "CSS",
-                        postotak: 51.1,
-                        klasa: "tech-css"
-                    },
-                    {
-                        naziv: "Vue",
-                        postotak: 38,
-                        klasa: "tech-vue"
-                    },
-                    {
                         naziv: "JavaScript",
-                        postotak: 9.2,
+                        postotak: 43.5,
                         klasa: "tech-js"
                     },
                     {
+                        naziv: "Vue",
+                        postotak: 34.7,
+                        klasa: "tech-vue"
+                    },
+                    {
+                        naziv: "CSS",
+                        postotak: 21.7,
+                        klasa: "tech-css"
+                    },                   
+                    {
                         naziv: "HTML",
-                        postotak: 1.7,
+                        postotak: 0.1,
                         klasa: "tech-html"
                     }
                 ]
