@@ -173,7 +173,7 @@ const projekti = [
 
         razina: "3",
 
-        deploy: ""
+        deploy: "https://wine-and-cheese-pairing-app.vercel.app/"
     },
     {
         naziv: "Health Companion",
