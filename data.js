@@ -695,7 +695,7 @@ const projekti = [
     deploy: "https://water-tracker-eosin.vercel.app/"
 },
 {
-    naziv: "Chess Opening Explorer",
+    naziv: "Chess Opening Repertoire",
 
     opis:
          "Interaktivni edukacijski vodič kroz šahovska otvaranja 1.e4, 1.d4 i 1.c4, s interaktivnom šahovskom pločom, grananjem varijanti, prikazom odigranih poteza i objašnjenjima poznatih otvaranja i obrana.",
@@ -744,7 +744,7 @@ const projekti = [
     frontendRazina: 3,
     backendRazina: null,
 
-    deploy: ""
+    deploy: "https://chess-openings-alpha.vercel.app/"
 }
 ];
 
