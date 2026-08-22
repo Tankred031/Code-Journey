@@ -693,6 +693,58 @@ const projekti = [
     backendRazina: null,
 
     deploy: "https://water-tracker-eosin.vercel.app/"
+},
+{
+    naziv: "Chess Opening Explorer",
+
+    opis:
+         "Interaktivni edukacijski vodič kroz šahovska otvaranja 1.e4, 1.d4 i 1.c4, s interaktivnom šahovskom pločom, grananjem varijanti, prikazom odigranih poteza i objašnjenjima poznatih otvaranja i obrana.",
+
+
+    tehnologije: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+    ],
+
+    technologyGroups: [
+        {
+            naziv: "",
+            udioTehnologija: [
+                {
+                    naziv: "JavaScript",
+                    postotak: 55,
+                    klasa: "tech-js"
+                },
+                {
+                    naziv: "CSS",
+                    postotak: 42,
+                    klasa: "tech-css"
+                },
+                {
+                    naziv: "HTML",
+                    postotak: 3,
+                    klasa: "tech-html"
+                },
+                
+            ]
+        }
+    ],
+
+    kategorija: "Education / Chess Opening Explorer",
+
+    slika: "images/ChessOpenings-img.png",
+
+    status: "završen",
+    statusKlasa: "completed",
+
+    pocetak: "2026-08-14",
+    kraj: "2026-08-14",
+
+    frontendRazina: 3,
+    backendRazina: null,
+
+    deploy: ""
 }
 ];
 
