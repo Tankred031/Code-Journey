@@ -213,8 +213,8 @@ const projekti = [
 
         slika: "images/Health-img.png",
 
-        status: "testiranje",
-        statusKlasa: "testing",
+        status: "završen",
+        statusKlasa: "completed",
 
         pocetak: "2026-05-24",
         kraj: null,
@@ -579,8 +579,8 @@ const projekti = [
 
         slika: "images/SF-Q2-img.png",
 
-        status: "u izradi",
-        statusKlasa: "active",
+        status: "završen",
+        statusKlasa: "completed",
 
         pocetak: "2026-06-16",
         kraj: null,
@@ -631,8 +631,8 @@ const projekti = [
 
     slika: "images/CookingMenu-img.png",
 
-    status: "u izradi",
-    statusKlasa: "active",
+    status: "napušten",
+    statusKlasa: "abandoned",
 
     pocetak: "2026-06-17",
     kraj: null,
