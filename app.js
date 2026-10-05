@@ -19,16 +19,21 @@ let trenutniPrikaz = "aktualno";
 function izracunajTrajanje(pocetak, kraj, status) {
     const startDate = new Date(pocetak);
 
-    let endDate;
+    const jeZatvoren =
+        status === "završen" || status === "napušten";
 
-    if (
-        (status === "završen" || status === "napušten") &&
-        kraj
-    ) {
-        endDate = new Date(kraj);
-    } else {
-        endDate = new Date();
+    /*
+        Završen/napušten projekt bez datuma završetka nema
+        pouzdano trajanje (ne brojimo do današnjeg dana).
+    */
+
+    if (jeZatvoren && !kraj) {
+        return null;
     }
+
+    const endDate = jeZatvoren
+        ? new Date(kraj)
+        : new Date();
 
     const razlika = endDate - startDate;
 
@@ -40,6 +45,10 @@ function izracunajTrajanje(pocetak, kraj, status) {
 }
 
 function formatirajDane(brojDana) {
+    if (brojDana === null) {
+        return "nije uneseno";
+    }
+
     return brojDana === 1
         ? "1 dan"
         : `${brojDana} dana`;
