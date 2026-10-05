@@ -75,7 +75,7 @@ const projekti = [
 
         kategorija: "First Steps / HTML CSS Basics",
 
-        slika: "images/MyFirst-img.png",
+        slika: "images/MyFirst-img.webp",
 
         status: "završen",
         statusKlasa: "completed",
@@ -83,7 +83,9 @@ const projekti = [
         pocetak: "2025-11-06",
         kraj: "2025-11-06",
 
-        razina: "0",
+        frontendRazina: 0,
+
+        backendRazina: null,
 
         deploy: ""
     },
@@ -114,7 +116,7 @@ const projekti = [
 
         kategorija: "Static Website / Movie Theme",
 
-        slika: "images/Machines-img.png",
+        slika: "images/Machines-img.webp",
 
         status: "završen",
         statusKlasa: "completed",
@@ -122,7 +124,9 @@ const projekti = [
         pocetak: "2025-12-20",
         kraj: "2026-01-12",
 
-        razina: "1",
+        frontendRazina: 1,
+
+        backendRazina: null,
 
         deploy: ""
     },
@@ -163,7 +167,7 @@ const projekti = [
 
         kategorija: "Food Pairing / CRUD App",
 
-        slika: ["images/Wine-img.png", "images/Wine2-img.png"],
+        slika: ["images/Wine-img.webp", "images/Wine2-img.webp"],
 
         status: "završen",
         statusKlasa: "completed",
@@ -171,7 +175,9 @@ const projekti = [
         pocetak: "2026-03-12",
         kraj: "2026-05-19",
 
-        razina: "3",
+        frontendRazina: 3,
+
+        backendRazina: null,
 
         deploy: "https://wine-and-cheese-pairing-app.vercel.app/"
     },
@@ -211,7 +217,7 @@ const projekti = [
 
         kategorija: "Health / Wellness App",
 
-        slika: "images/Health-img.png",
+        slika: "images/Health-img.webp",
 
         status: "završen",
         statusKlasa: "completed",
@@ -219,7 +225,9 @@ const projekti = [
         pocetak: "2026-05-24",
         kraj: null,
 
-        razina: "4",
+        frontendRazina: 4,
+
+        backendRazina: null,
 
         deploy: "https://health-companion-mauve.vercel.app/"
     },
@@ -261,7 +269,7 @@ const projekti = [
 
         kategorija: "Game Guide / Reference App",
 
-        slika: ["images/druids1-img.png", "images/druids2-img.png"],
+        slika: ["images/druids1-img.webp", "images/druids2-img.webp"],
 
         status: "završen",
         statusKlasa: "completed",
@@ -269,7 +277,9 @@ const projekti = [
         pocetak: "2026-05-22",
         kraj: "2026-06-02",
 
-        razina: "2",
+        frontendRazina: 2,
+
+        backendRazina: null,
 
         deploy: ""
     },
@@ -308,7 +318,7 @@ const projekti = [
 
         kategorija: "Calculator / Work Tool",
 
-        slika: "images/Excise-img.png",
+        slika: "images/Excise-img.webp",
 
         status: "završen",
         statusKlasa: "completed",
@@ -316,7 +326,9 @@ const projekti = [
         pocetak: "2026-06-01",
         kraj: "2026-06-11",
 
-        razina: "3",
+        frontendRazina: 3,
+
+        backendRazina: null,
 
         deploy: "https://excise-duties-calculator.vercel.app/"
     },
@@ -355,7 +367,7 @@ const projekti = [
 
         kategorija: "Quiz / Progression App",
 
-        slika: "images/SF-Quiz-img.png",
+        slika: "images/SF-Quiz-img.webp",
 
         status: "završen",
         statusKlasa: "completed",
@@ -363,7 +375,9 @@ const projekti = [
         pocetak: "2026-06-04",
         kraj: "2026-06-17",
 
-        razina: "5",
+        frontendRazina: 5,
+
+        backendRazina: null,
 
         deploy: ""
     },
@@ -402,7 +416,7 @@ const projekti = [
 
         kategorija: "Interactive Story / Branching System",
 
-        slika: "images/ObviousSolution-img.png",
+        slika: "images/ObviousSolution-img.webp",
 
         status: "napušten",
         statusKlasa: "abandoned",
@@ -457,7 +471,7 @@ const projekti = [
 
         kategorija: "Business Website / Logistics",
 
-        slika: "images/SM2-img.png",
+        slika: "images/SM2-img.webp",
 
         status: "završen",
         statusKlasa: "completed",
@@ -465,7 +479,9 @@ const projekti = [
         pocetak: "2026-06-13",
         kraj: "2026-06-14",
 
-        razina: "2",
+        frontendRazina: 2,
+
+        backendRazina: null,
 
         deploy: "https://webpagesm-sped.vercel.app/"
     },
@@ -519,8 +535,8 @@ const projekti = [
         kategorija: "Learning Project / Python Web",
 
         slike: [
-            "images/Python-img.png",
-            "images/Streamlit-img.png"
+            "images/Python-img.webp",
+            "images/Streamlit-img.webp"
         ],
 
         status: "završen",
@@ -529,7 +545,9 @@ const projekti = [
         pocetak: "2026-06-14",
         kraj: "2026-06-14",
 
-        razina: "0",
+        frontendRazina: 0,
+
+        backendRazina: null,
 
         deploy: ""
     },
@@ -577,7 +595,7 @@ const projekti = [
 
         kategorija: "Quiz / Progression System",
 
-        slika: "images/SF-Q2-img.png",
+        slika: "images/SF-Q2-img.webp",
 
         status: "završen",
         statusKlasa: "completed",
@@ -591,23 +609,23 @@ const projekti = [
         deploy: ""
     },
     {
-    naziv: "Što kuhamo?",
+        naziv: "Što kuhamo?",
 
-    opis:
-        "Vue aplikacija za planiranje tjednog jelovnika i vođenje kućnih zaliha hrane u hladnjaku i špajzi. Omogućit će odabir obroka po danima, unos kupljenih namirnica i povezivanje potrošnje sastojaka sa zalihama.",
+        opis:
+            "Vue aplikacija za planiranje tjednog jelovnika i vođenje kućnih zaliha hrane u hladnjaku i špajzi. Omogućit će odabir obroka po danima, unos kupljenih namirnica i povezivanje potrošnje sastojaka sa zalihama.",
 
-    tehnologije: [
-        "Vue",
-        "JavaScript",
-        "UIkit",
-        "CSS",
-        "Vite"
-    ],
+        tehnologije: [
+            "Vue",
+            "JavaScript",
+            "UIkit",
+            "CSS",
+            "Vite"
+        ],
 
-    technologyGroups: [
+        technologyGroups: [
             {
                 naziv: "",
-                udioTehnologija: [                    
+                udioTehnologija: [
                     {
                         naziv: "JavaScript",
                         postotak: 64.3,
@@ -622,130 +640,130 @@ const projekti = [
                         naziv: "Vue",
                         postotak: 13.0,
                         klasa: "tech-vue"
-                    }                   
+                    }
                 ]
             }
         ],
 
-    kategorija: "Meal Planner / Pantry Management",
+        kategorija: "Meal Planner / Pantry Management",
 
-    slika: "images/CookingMenu-img.png",
+        slika: "images/CookingMenu-img.webp",
 
-    status: "napušten",
-    statusKlasa: "abandoned",
+        status: "napušten",
+        statusKlasa: "abandoned",
 
-    pocetak: "2026-06-17",
-    kraj: null,
+        pocetak: "2026-06-17",
+        kraj: null,
 
-    frontendRazina: 3,
-    backendRazina: null,
+        frontendRazina: 3,
+        backendRazina: null,
 
-    deploy: ""
-},
-{
-    naziv: "Water Tracker",
+        deploy: ""
+    },
+    {
+        naziv: "Water Tracker",
 
-    opis:
-        "Jednostavna React mini aplikacija za praćenje unosa vode, izrađena prvenstveno za upoznavanje s Tailwind CSS-om i utility-first načinom stiliziranja.",
+        opis:
+            "Jednostavna React mini aplikacija za praćenje unosa vode, izrađena prvenstveno za upoznavanje s Tailwind CSS-om i utility-first načinom stiliziranja.",
 
-    tehnologije: [
-        "React",
-        "JavaScript",
-        "Tailwind CSS",
-        "Vite"
-    ],
+        tehnologije: [
+            "React",
+            "JavaScript",
+            "Tailwind CSS",
+            "Vite"
+        ],
 
-    technologyGroups: [
-        {
-            naziv: "",
-            udioTehnologija: [
-                {
-                    naziv: "JavaScript",
-                    postotak: 50.3,
-                    klasa: "tech-js"
-                },
-                {
-                    naziv: "CSS",
-                    postotak: 44.1,
-                    klasa: "tech-css"
-                },
-                {
-                    naziv: "HTML",
-                    postotak: 5.6,
-                    klasa: "tech-html"
-                },
-                
-            ]
-        }
-    ],
+        technologyGroups: [
+            {
+                naziv: "",
+                udioTehnologija: [
+                    {
+                        naziv: "JavaScript",
+                        postotak: 50.3,
+                        klasa: "tech-js"
+                    },
+                    {
+                        naziv: "CSS",
+                        postotak: 44.1,
+                        klasa: "tech-css"
+                    },
+                    {
+                        naziv: "HTML",
+                        postotak: 5.6,
+                        klasa: "tech-html"
+                    },
 
-    kategorija: "Hydration / State Tracker",
+                ]
+            }
+        ],
 
-    slika: "images/Water-tracker-img.png",
+        kategorija: "Hydration / State Tracker",
 
-    status: "završen",
-    statusKlasa: "completed",
+        slika: "images/Water-tracker-img.webp",
 
-    pocetak: "2026-06-18",
-    kraj: "2026-06-18",
+        status: "završen",
+        statusKlasa: "completed",
 
-    frontendRazina: 2,
-    backendRazina: null,
+        pocetak: "2026-06-18",
+        kraj: "2026-06-18",
 
-    deploy: "https://water-tracker-eosin.vercel.app/"
-},
-{
-    naziv: "Chess Opening Repertoire",
+        frontendRazina: 2,
+        backendRazina: null,
 
-    opis:
-         "Interaktivni edukacijski vodič kroz šahovska otvaranja 1.e4, 1.d4 i 1.c4, s interaktivnom šahovskom pločom, grananjem varijanti, prikazom odigranih poteza i objašnjenjima poznatih otvaranja i obrana.",
+        deploy: "https://water-tracker-eosin.vercel.app/"
+    },
+    {
+        naziv: "Chess Opening Repertoire",
+
+        opis:
+            "Interaktivni edukacijski vodič kroz šahovska otvaranja 1.e4, 1.d4 i 1.c4, s interaktivnom šahovskom pločom, grananjem varijanti, prikazom odigranih poteza i objašnjenjima poznatih otvaranja i obrana.",
 
 
-    tehnologije: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-    ],
+        tehnologije: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+        ],
 
-    technologyGroups: [
-        {
-            naziv: "",
-            udioTehnologija: [
-                {
-                    naziv: "JavaScript",
-                    postotak: 55,
-                    klasa: "tech-js"
-                },
-                {
-                    naziv: "CSS",
-                    postotak: 42,
-                    klasa: "tech-css"
-                },
-                {
-                    naziv: "HTML",
-                    postotak: 3,
-                    klasa: "tech-html"
-                },
-                
-            ]
-        }
-    ],
+        technologyGroups: [
+            {
+                naziv: "",
+                udioTehnologija: [
+                    {
+                        naziv: "JavaScript",
+                        postotak: 55,
+                        klasa: "tech-js"
+                    },
+                    {
+                        naziv: "CSS",
+                        postotak: 42,
+                        klasa: "tech-css"
+                    },
+                    {
+                        naziv: "HTML",
+                        postotak: 3,
+                        klasa: "tech-html"
+                    },
 
-    kategorija: "Education / Chess Opening Explorer",
+                ]
+            }
+        ],
 
-    slika: "images/ChessOpenings-img.png",
+        kategorija: "Education / Chess Opening Explorer",
 
-    status: "završen",
-    statusKlasa: "completed",
+        slika: "images/ChessOpenings-img.webp",
 
-    pocetak: "2026-08-14",
-    kraj: "2026-08-14",
+        status: "završen",
+        statusKlasa: "completed",
 
-    frontendRazina: 3,
-    backendRazina: null,
+        pocetak: "2026-08-14",
+        kraj: "2026-08-14",
 
-    deploy: "https://chess-openings-alpha.vercel.app/"
-}
+        frontendRazina: 3,
+        backendRazina: null,
+
+        deploy: "https://chess-openings-alpha.vercel.app/"
+    }
 ];
 
 

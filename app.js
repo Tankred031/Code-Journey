@@ -1,10 +1,7 @@
 const projectsList = document.querySelector(".projects-list");
 const viewButtons = document.querySelectorAll(".view-btn");
 
-const totalProjects = document.querySelector("#total-projects");
-const completedProjects = document.querySelector("#completed-projects");
-const activeProjects = document.querySelector("#active-projects");
-const testingProjects = document.querySelector("#testing-projects");
+const statsSection = document.querySelector(".stats-section");
 
 const projekataPoStranici = 4;
 
@@ -58,26 +55,58 @@ function formatirajDane(brojDana) {
    STATISTIKA
 ========================================= */
 
+function prebrojiStatus(status) {
+    return projekti.filter(function (projekt) {
+        return projekt.status === status;
+    }).length;
+}
+
+function dohvatiNajvisuRazinu() {
+    const razine = projekti.flatMap(function (projekt) {
+        const { frontend, backend } = dohvatiBrojeveRazina(projekt);
+
+        return [frontend, backend]
+            .filter(function (razina) {
+                return razina !== null && razina !== undefined;
+            })
+            .map(Number);
+    });
+
+    return razine.length > 0 ? Math.max(...razine) : "—";
+}
+
 function renderStats() {
-    totalProjects.textContent = projekti.length;
+    if (!statsSection) {
+        return;
+    }
 
-    completedProjects.textContent = projekti.filter(
-        function (projekt) {
-            return projekt.status === "završen";
-        }
-    ).length;
+    /*
+        "U izradi" i "Testiranje" prikazuju se samo kad
+        postoji barem jedan takav projekt.
+    */
 
-    activeProjects.textContent = projekti.filter(
-        function (projekt) {
-            return projekt.status === "u izradi";
-        }
-    ).length;
+    const kartice = [
+        { naziv: "Ukupno", vrijednost: projekti.length },
+        { naziv: "Završeno", vrijednost: prebrojiStatus("završen") },
+        { naziv: "U izradi", vrijednost: prebrojiStatus("u izradi"), samoAkoPostoji: true },
+        { naziv: "Testiranje", vrijednost: prebrojiStatus("testiranje"), samoAkoPostoji: true },
+        { naziv: "Napušteno", vrijednost: prebrojiStatus("napušten") },
+        { naziv: "Najviša razina", vrijednost: dohvatiNajvisuRazinu() }
+    ];
 
-    testingProjects.textContent = projekti.filter(
-        function (projekt) {
-            return projekt.status === "testiranje";
-        }
-    ).length;
+    statsSection.innerHTML = kartice
+        .filter(function (kartica) {
+            return !kartica.samoAkoPostoji || kartica.vrijednost > 0;
+        })
+        .map(function (kartica) {
+            return `
+                <div class="stat-card">
+                    <span>${kartica.naziv}</span>
+                    <strong>${kartica.vrijednost}</strong>
+                </div>
+            `;
+        })
+        .join("");
 }
 
 /* =========================================
@@ -349,8 +378,9 @@ function renderProjects(nacinPrikaza = trenutniPrikaz) {
                     <button
                         type="button"
                         class="project-menu-btn"
+                        aria-label="Natrag na popis projekata"
                     >
-                        menu
+                        ← Popis
                     </button>
 
                     <span
