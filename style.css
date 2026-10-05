@@ -66,7 +66,7 @@ body {
 
 .stats-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
 
     gap: 16px;
     margin-bottom: 40px;
@@ -602,17 +602,45 @@ body {
         transform: none;
     }
 
-    @media (max-width: 600px) {
     .app {
         width: 96%;
         padding: 24px 0;
     }
 }
-}
 
 /* =========================================
    TABLICA PROJEKATA
 ========================================= */
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.table-header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.section-kicker {
+    margin: 0 0 8px;
+
+    color: #38bdf8;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+#table-project-count {
+    color: #9ca3af;
+    font-size: 14px;
+}
 
 #project-table-page {
     width: 100%;
@@ -935,5 +963,38 @@ body {
     .project-menu-btn {
         min-width: auto;
         padding: 0.42rem 0.7rem;
+    }
+}
+
+/* =========================================
+   MOBITEL: DETALJNI PRIKAZ
+========================================= */
+
+@media (max-width: 700px) {
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-card {
+        padding: 16px;
+    }
+
+    .project-header {
+        flex-wrap: wrap;
+    }
+
+    .project-header h3 {
+        min-width: 0;
+        font-size: 20px;
+        overflow-wrap: anywhere;
+    }
+
+    .project-content {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project-main-info,
+    .project-side-info {
+        min-width: 0;
     }
 }

@@ -93,3 +93,40 @@ function napraviRazinuHtml(projekt) {
         </strong>
     `;
 }
+
+/*
+    Kratki zapis razine za tablicu:
+    "Frontend 3", "Frontend 3 · Backend 1" ili "6 — Full Stack".
+*/
+
+function dohvatiBrojeveRazina(projekt) {
+    const frontend =
+        projekt.frontendRazina !== undefined
+            ? projekt.frontendRazina
+            : projekt.razina;
+
+    return {
+        frontend: frontend === "" ? null : frontend,
+        backend: projekt.backendRazina
+    };
+}
+
+function napraviRazinuTekst(projekt) {
+    const { frontend, backend } = dohvatiBrojeveRazina(projekt);
+
+    if (Number(frontend) === 6 || Number(backend) === 6) {
+        return "6 — Full Stack";
+    }
+
+    const dijelovi = [];
+
+    if (frontend !== null && frontend !== undefined) {
+        dijelovi.push(`Frontend ${frontend}`);
+    }
+
+    if (backend !== null && backend !== undefined) {
+        dijelovi.push(`Backend ${backend}`);
+    }
+
+    return dijelovi.length > 0 ? dijelovi.join(" · ") : "—";
+}

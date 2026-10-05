@@ -48,10 +48,7 @@ function renderProjectTable() {
 
         row.dataset.projectId = projectId;
 
-        const razinaProjekta =
-            projekt.razina ??
-            projekt.frontendRazina ??
-            "—";
+        const razinaProjekta = napraviRazinuTekst(projekt);
 
         const tehnologije = Array.isArray(projekt.tehnologije)
             ? projekt.tehnologije.join(", ")
